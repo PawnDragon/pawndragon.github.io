@@ -1,34 +1,22 @@
-{% if site.style == 'dark' %}
-  {% assign icon_color = "#ffffff" %}
-{% else %}
-  {% assign icon_color = "#24292e" %}
-{% endif %}
-
-{% assign content = page.content %}
-
-{% assign posts_total = site.posts | size %}
-
-{% assign user = site.github.owner %}
-
-{% if page.path contains '_posts' %}
-  {% assign page_title = page.title %}
-  {% assign meta_description = page.content | strip_html | strip_newlines | xml_escape | truncate: 300 %}
-{% else %}
-  {% assign page_title = user.name %}
-  {% assign meta_description = user.bio | strip_html | strip_newlines | xml_escape | truncate: 300 %}
-{% endif %}
-
 <!doctype html>
-<html class="min-height-full">
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Shaolong Chen (陈少龙)</title>
-    <meta name="description" content="{{ meta_description }}" />
-    <meta property="og:title" content="{{ user.name }}" />
-    <meta property="og:image" content="{{ user.avatar_url }}" />
-    <meta property="og:description" content="{{ meta_description }}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="{{ "/assets/styles.css" | relative_url }}" rel="stylesheet" type="text/css">
-    <link rel="icon" type="image/svg+xml" href="{{ "/assets/favicon.svg" | relative_url }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Shaolong Chen's academic homepage: research in LLM and AI agent security and privacy.">
+    <title>Shaolong Chen (陈少龙) - Homepage</title>
+    <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}">
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
   </head>
-  <body class="bg-white min-height-full" {% if site.style == 'dark' %}style="background-color: #2f363d !important"{% endif %}>
+  <body>
+    <header class="academic-header">
+      <div class="academic-header__inner">
+        <a class="academic-header__name" href="{{ '/' | relative_url }}">Shaolong Chen (陈少龙)</a>
+        <nav aria-label="Main navigation">
+          <a href="{{ '/' | relative_url }}#about">About Me</a>
+          <a href="{{ '/' | relative_url }}#experience">Work Experience</a>
+          <a href="{{ '/' | relative_url }}#research">Research</a>
+          <a href="{{ '/' | relative_url }}#publications">Publications</a>
+        </nav>
+      </div>
+    </header>
